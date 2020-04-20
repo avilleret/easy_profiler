@@ -43,6 +43,10 @@ endmacro()
 
 SET(CMAKE_INSTALL_RPATH "$ORIGIN")
 
+option(EASY_PROFILER_NO_GUI       "Disable GUI tool"  FALSE)
+option(EASY_PROFILER_NO_CONVERTER "Disable converter" FALSE)
+option(EASY_PROFILER_NO_SAMPLES   "Disable example"   FALSE)
+
 add_subdirectory(easy_profiler_core)
 if (NOT EASY_PROFILER_NO_GUI)
     add_subdirectory(profiler_gui)
