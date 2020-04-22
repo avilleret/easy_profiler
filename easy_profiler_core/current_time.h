@@ -128,6 +128,7 @@ static inline profiler::timestamp_t now()
     #elif defined(_MSC_VER)
       return __rdtsc();
     #elif defined(__aarch64__)
+       return 1; // XMA : Hack for now, until i figure out what clock to use on the dumps.
       // System timer of ARMv8 runs at a different frequency than the CPU's.
       // The frequency is fixed, typically in the range 1-50MHz.  It can be
       // read at CNTFRQ special register.  We assume the OS has set up
